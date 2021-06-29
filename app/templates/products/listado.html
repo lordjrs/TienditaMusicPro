@@ -1,0 +1,193 @@
+{% extends 'layouts/tienda.html' %}
+
+{% load cart_tags %}
+
+{% block title %}Tienda{% endblock %}
+
+{% block content %}
+
+    <div class="jumbotron">
+        <h1 class="display-4">Te damos la bienvenida a Zafiro</h1>
+        <p class="lead">Somos lideres en la importacion de productos originales directamentes desde los Estados Unidos.</p>
+    </div>
+
+      <div class="container p-3 my-3 bg-dark text-white">
+    <H1>Próximamente en Zafiro</H1>
+  </div>
+
+
+  <!--Carousel Wrapper-->
+  <div id="multi-item-example" class="carousel slide carousel-multi-item" data-ride="carousel">
+
+    <!--Controls-->
+    <div class="controls-top">
+      <a class="btn-floating" href="#multi-item-example" data-slide="prev"><i class="fa fa-chevron-left"></i></a>
+      <a class="btn-floating" href="#multi-item-example" data-slide="next"><i class="fa fa-chevron-right"></i></a>
+    </div>
+    <!--/.Controls-->
+
+    <!--Indicators-->
+    <ol class="carousel-indicators">
+      <li data-target="#multi-item-example" data-slide-to="0" class="active"></li>
+      <li data-target="#multi-item-example" data-slide-to="1"></li>
+      <li data-target="#multi-item-example" data-slide-to="2"></li>
+    </ol>
+    <!--/.Indicators-->
+
+    <!--Slides-->
+    <div class="carousel-inner" id="backnegro" role="listbox">
+
+      <!--First slide-->
+      <div class="carousel-item active">
+
+        <div class="row">
+          <div class="col-md-4">
+            <div class="card mb-2">
+              <img class="card-img-top" src="../static/img/Coleccion/9Q3WHT-HERO.jpg"
+                alt="Card image cap">
+              <div class="card-body">
+                <h4 class="card-title">Trespassing T-Shirt</h4>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4 clearfix d-none d-md-block">
+            <div class="card mb-2">
+              <img class="card-img-top" src="../static/img/Coleccion/9QBCMA-ALT1.jpg"
+                alt="Card image cap">
+              <div class="card-body">
+                <h4 class="card-title">SVD Dojo T-Shirt</h4>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4 clearfix d-none d-md-block">
+            <div class="card mb-2">
+              <img class="card-img-top" src="../static/img/Coleccion/CZEY28-HERO.jpg"
+                alt="Card image cap">
+              <div class="card-body">
+                <h4 class="card-title">Left Chest Logo T-Shirt</h4>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <!--/.First slide-->
+
+      <!--Second slide-->
+      <div class="carousel-item">
+
+        <div class="row">
+          <div class="col-md-4">
+            <div class="card mb-2">
+              <img class="card-img-top" src="../static/img/Coleccion/CZEYB2-HERO.jpg"
+                alt="Card image cap">
+              <div class="card-body">
+                <h4 class="card-title">Left Chest Logo T-Shirt</h4>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4 clearfix d-none d-md-block">
+            <div class="card mb-2">
+              <img class="card-img-top" src="../static/img/Coleccion/JAYY28-HERO.jpg"
+                alt="Card image cap">
+              <div class="card-body">
+                <h4 class="card-title">Vans OTW T-Shirt</h4>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4 clearfix d-none d-md-block">
+            <div class="card mb-2">
+              <img class="card-img-top" src="../static/img/Coleccion/MSLYCV-ALT1.jpg"
+                alt="Card image cap">
+              <div class="card-body">
+                <h4 class="card-title">Emory Shirt</h4>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <!--/.Second slide-->
+
+      <!--Third slide-->
+      <div class="carousel-item">
+
+        <div class="row">
+          <div class="col-md-4">
+            <div class="card mb-2">
+              <img class="card-img-top" src="../static/img/Poleras/TUXBLK-HERO.jpg"
+                alt="Card image cap">
+              <div class="card-body">
+                <h4 class="card-title">Laced Long Sleeve T-Shirt</h4>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4 clearfix d-none d-md-block">
+            <div class="card mb-2">
+              <img class="card-img-top" src="../static/img/Poleras/TUWBZX-HERO.jpg"
+                alt="Card image cap">
+              <div class="card-body">
+                <h4 class="card-title">Wall Slide Tie Dye Long Sleeve T-Shirt</h4>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4 clearfix d-none d-md-block">
+            <div class="card mb-2">
+              <img class="card-img-top" src="../static/img/Poleras/TUXWHT-HERO.jpg"
+                alt="Card image cap">
+              <div class="card-body">
+                <h4 class="card-title">Laced Long Sleeve T-Shirt</h4>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <!--/.Third slide-->
+
+    </div>
+    <!--/.Slides-->
+
+  </div>
+  <!--/.Carousel Wrapper-->
+<div class="container p-3 my-3 bg-dark text-white">
+ <H1>Camisetas</H1>
+</div>
+
+Total {{ cart_total_amount|money_format:"$" }}
+
+    <div class="row">
+        <div class="col-9">
+            <div class="row">
+                {% for product in products %}
+                    <div class="col-md-3 col-sm-12 col-lg-4">
+                        <div class="card" style="width: 100%">
+                            <img src="{{ product.image.url }}" style="width:100%;" class="card-img-top" alt="{{ product.name }}" />
+                            <div class="card-body">
+                                <h5 class="card-title"> {{ product.name }}</h5>
+                                <p class="card-text">{{ product.excerpt }}</p>
+                                <p class="card-text">${{ product.price }}</p>
+                            </div>
+                            <div class='card-footer text-center'>
+                                <a href="{% url 'cart:add_product' product.id %}" class="btn btn-success">
+                                    Añadir al carrito
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>  
+
+        <div class="col-3">
+            {% include "cart/widget.html" %}
+        </div>
+
+    </div>
+{% endblock %}

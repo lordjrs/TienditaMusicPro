@@ -1,0 +1,19 @@
+{% extends 'layouts/tienda.html' %}
+
+{% block title %}Agregar polera{% endblock %}
+
+{% block content %}
+{{ msg }}
+<h2>Agregar producto</h2>
+
+<form action="" method="POST">
+    {% csrf_token %}
+    <table>{{ form.as_table }}</table>
+
+    <input type="reset" value="Limpiar">
+    <input type="submit" value="Guardar">
+</form>
+
+
+
+{% endblock %}

@@ -1,0 +1,23 @@
+{% extends 'layouts/tienda.html' %}
+
+{% block title %}Acceder{% endblock %}
+
+{% load crispy_forms_tags %}
+
+{% block content %}
+    <div class="jumbotron">
+        <h1 class="display-4">Te damos la bienvenida a Zafiro</h1>
+        <p class="lead">Por favor regístrate o inicia sesión para continuar.</p>
+    </div>
+    <form method="POST" action="" class="mt-2" autocomplete="off">
+        {% csrf_token %}
+        {{ form|crispy }}
+        <button type="submit" class="btn btn-success">Iniciar sesión!</button>
+        <a href="{% url 'social:begin' 'facebook' %}" 
+             class="btn btn-primary" role="button">Facebook login</a>
+        <a href="{% url 'social:begin' 'google-oauth2' %}" 
+             class="btn btn-light" role="button">Google login</a>
+    </form>
+
+    <div></div>
+{% endblock %}

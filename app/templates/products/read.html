@@ -1,0 +1,37 @@
+{% extends 'layouts/tienda.html' %}
+
+{% block title %}Listado de poleras{% endblock %}
+
+{% block content %}
+
+<h1>Listado de camisetasseeeeee</h1>
+
+<table>
+    <tr>
+        <th>Nombre</th>
+        <th>Tipo</th>
+        <th>Imagen</th>
+        <th>Descripción</th>
+        <th>Precio</th>
+        <th>Disponible</th>
+        <th>Categoría</th>
+    </tr>
+
+    {% for p in poleras %}
+
+    <tr>
+        <td>{{ p.name }}</td>
+        <td>{{ p.image }}</td>
+        <td>{{ p.slug }}</td>
+        <td>{{ p.excerpt }}</td>
+        <td>{{ p.price }}</td>
+        <td>{{ p.available }}</td>
+        <td>{{ p.category }}</td>
+        <td>
+            <a href="#" onclick="confirmarEliminar({{p.id}})">Eliminar</a>
+        </td>
+    </tr>
+
+    {% endfor %}
+</table>
+{% endblock %}

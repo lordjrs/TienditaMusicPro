@@ -1,0 +1,67 @@
+
+body{
+    background-color: white;
+}
+
+
+#progeria{
+    position: absolute;
+    top: 011cm;
+    left: 2em;
+}
+
+#centrarh{
+text-align: center;
+}
+#tlogo{
+    font-size: 200%;
+    padding-left: 2%;
+}
+
+#tamanonav{
+   font-size: 25px;
+}
+
+#imgfooter{
+    display:block;
+    margin:auto;
+    }
+
+#backnegro{
+    background-color: whitesmoke;
+}
+
+
+html,
+body {
+    margin: 0px;
+    padding: 0px;
+    height: 100%;
+}
+
+#wrapper{
+    padding-bottom: 81px;
+    min-height: calc(50% - 81px);
+    position: relative;
+}
+
+
+header {
+    color: white;
+    background-color: #0086CD;
+}
+
+
+footer{
+    background-color: black;
+    color: white;
+    
+}
+
+.card-footer {
+    min-height: 12%;
+}
+
+.card{
+    min-height: 12%;
+}
