@@ -11,6 +11,14 @@ from app.serializers import ProductoSerializer
 class ProductoViewset(viewsets.ModelViewSet):
     queryset = Product.objects.all()
     serializer_class = ProductoSerializer
+    
+    def get_queryset(self):
+        productos = Product.objects.all()
+        name = self.request.GET.get('name')
+        
+        if name:
+            productos = productos.filter(name__contains=name)
+        return productos
 
 @login_required(login_url='/autenticacion/acceder')
 def listado_productos(request):
