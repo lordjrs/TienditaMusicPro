@@ -1,13 +1,17 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
-from .models import Product
+from .models import Product,Category
 from .forms import PoleraForm
 from cart.cart import Cart
 from rest_framework import viewsets
-from app.serializers import ProductoSerializer
-
+from app.serializers import ProductoSerializer,CategorySerializer
 
 # Create your views here.
+
+class CategoryViewset(viewsets.ModelViewSet):
+    queryset = Category.objects.all()
+    serializer_class = CategorySerializer
+
 class ProductoViewset(viewsets.ModelViewSet):
     queryset = Product.objects.all()
     serializer_class = ProductoSerializer

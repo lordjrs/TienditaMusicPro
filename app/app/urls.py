@@ -14,6 +14,6 @@ urlpatterns = [
               ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 
-admin.site.site_header = "Administración de Zafiro"
+admin.site.site_header = "Administración de MusicPro"
 admin.site.index_title = "Modulos de administración"
-admin.site.site_title = "Zafiro"
+admin.site.site_title = "MusicPro"
